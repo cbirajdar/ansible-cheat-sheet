@@ -25,16 +25,23 @@ Load configuration files from following locations (first found will be used and 
 
 Order of execution:
 
-- Variable loading
-  - hosts
-  - become
-  - become_user
-  - connection
-  - remote_user
+- Variable loading (vars)
 - Fact gathering (gather_facts)
 - Pre tasks (pre_tasks)
 - Handlers from pre_tasks execution
 - Roles (roles)
-- Tasks
+- Tasks (tasks)
 - Handlers from tasks execution
 - Post tasks (post_tasks)
+
+Play behavior keys:
+- any_errors_fatal
+- connection
+- gather_facts
+- max_fail_percentage
+- no_log
+- port
+- remote_user
+- serial
+- sudo
+- su
