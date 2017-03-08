@@ -1,10 +1,10 @@
 # ansible-cheat-sheet
 
-#### Version
+### Version
 
 ```ansible --version or ansible-playbook --version```
 
-#### Configuration
+### Configuration
 
 Load configuration files from following locations (first found will be used and overrides others)
 
@@ -13,7 +13,7 @@ Load configuration files from following locations (first found will be used and 
 - $HOME/ansible.cfg
 - /etc/ansible/ansible.cfg
 
-#### Inventory
+### Inventory
 
 - ```-i INVENTORY, --inventory-file=INVENTORY```
   - INVENTORTY - path for the inventory file
@@ -21,7 +21,7 @@ Load configuration files from following locations (first found will be used and 
 - ```-l SUBSET, --limit=SUBSET```
   - SUBSET - pattern to limit hosts
 
-#### Playbook
+### Playbook
 
 Order of execution:
 
@@ -45,3 +45,22 @@ Play behavior keys:
 - serial
 - sudo
 - su
+
+### Variable types
+
+- Inventory variables (directories)
+  - host_vars/<host>
+  - group_vars/<group>
+- Role variables
+  - Only scoped for roles
+- Play variables
+  - vars
+  - var_files
+- Task variables
+  - Set the value via register task key
+- Extra variables
+  - Set as command line using --extra-vars
+  - ```--extra-vars "foo=bar"```
+  - Global scoped
+- External data
+  - Lookup plugin
